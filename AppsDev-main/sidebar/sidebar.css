@@ -1,0 +1,190 @@
+
+.icon{
+ background-color: #181818;
+ border-radius: 5px ;
+ width: 36px;
+ height:36px;
+ display:flex;
+ align-items: center;
+ justify-content:center;
+ cursor:pointer;
+ position:fixed;
+ top:10px;
+ left:10px;
+ z-index:999;
+ transition: transform .53s;
+}
+
+.icons{
+ transform: translateX(255px);
+ background-color:#181818;
+ border-radius: 5px ;
+ width: 36px;
+ height:36px;
+ display:flex;
+ align-items: center;
+ justify-content:center;
+ cursor:pointer;
+ position:fixed;
+ top:10px;
+ left:10px;
+ z-index:999;
+}
+.icon:hover , .icons:hover{
+ background-color: #141414;
+}
+.svg{
+ color:#BCBCBC;
+ transition: transform .5s;
+}
+.svgs{
+ transform: rotate(-180deg);
+ color:#BCBCBC;
+}
+.svg:hover , .svgs:hover{
+ color: #fbfbfb;
+}
+
+
+.aside{
+ width: 25%;
+ background-color: #181818;
+ border-top-right-radius: 10px; 
+ border-bottom-right-radius: 10px; 
+ position: fixed;
+ transition: transform .5s;
+ left: -345px;
+ top: 10px;
+ bottom: 10px;
+ box-sizing: border-box;
+ overflow: hidden;
+ display:flex;
+ flex-direction:column;
+ row-gap: 5px;
+ z-index: 10;
+}
+
+
+.asides{
+ width: 25%;
+ background-color: #181818;
+ top:10px;
+ bottom: 10px;
+ border-top-right-radius: 5px; 
+ border-bottom-right-radius: 5px; 
+ transform: translateX(265px);
+ box-sizing: border-box;
+ overflow: hidden;
+ display:flex;
+ flex-direction:column;
+ row-gap: 5px;
+ z-index: 10;
+}
+
+.topAside{
+ margin: 5px;
+ display: flex;
+ align-items: center;
+ height: 15%;
+}
+
+.asideContains{
+ overflow: hidden;
+ overflow-y: scroll;
+ height: 100%;
+ 
+}
+.asideContains::-webkit-scrollbar {
+ width: 5px; 
+ background-color: transparent;
+}
+.asideContains::-webkit-scrollbar-thumb {
+ background-color: #fbfbfb; 
+ border-radius: 50px;
+}
+
+.teacherDetail{
+ margin:5px;
+ margin-right:8px;
+}
+
+.teacherName{
+ width: 97%;
+ color: #BCBCBC;
+ height: 40px;
+ border-radius: 3px;
+ cursor:pointer;
+ overflow: auto;
+ display: flex;
+ align-items: center;
+ font-family: 'Assistant', sans-serif;
+ font-size: 1rem;
+ display:flex;
+}
+.teacherName:hover{
+ color: #fbfbfb;
+ background-color:#252525;
+}
+
+.teacherInfo{
+ width: 100%;
+ color: #BCBCBC;
+ height: 36px;
+ border-radius: 3px;
+ cursor:pointer;
+ overflow: auto;
+ display: flex;
+ align-items: center;
+ padding: .15em;
+ padding-left: 8%;
+ box-sizing: border-box;
+ font-family: 'Assistant', sans-serif;
+ font-size: .875rem;
+ display:flex;
+ white-space: nowrap;
+}
+.teacherInfo:hover{
+ color: #fbfbfb;
+ background-color:#252525;
+}
+
+.teacherName::-webkit-scrollbar {
+ width: 1px; 
+ background-color: transparent;
+ height: 1px;
+}
+.teacherName::-webkit-scrollbar-thumb {
+ background-color: #595865; 
+ border-radius: 50px;
+}
+
+.border{
+ margin: 0 auto;
+ width: 90%;
+ border-bottom: 1px solid #31303b;
+ height: 5px;
+}
+.bottomAside{
+ height: 15%;
+}
+#one{
+ display: none;
+}
+.nameSvg,.classroomSvg,.name{
+ padding: 5px;
+ color:#BCBCBC;
+ 
+}
+.nameSvg{
+ transform: rotate(90deg);
+ 
+}
+.classroomSvg{
+ min-width: 16px;
+ min-height: 16px;
+}
+.class-timer{
+ text-align: right;
+ width: 100%;
+ color: #c92a2a;
+}

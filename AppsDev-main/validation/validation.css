@@ -1,0 +1,245 @@
+.dialog {
+  width: 550px;
+  height: 180px;
+  border-radius: 20px;
+  background-color: #181818;
+  border-color: #676775;
+  transform: translateY(-100px);
+  overflow: hidden;
+}
+.dialog-handler {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.close-button {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 10%;
+}
+.mid-content {
+  height: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #676775;
+  font-family: helvetica;
+  font-size: 25px;
+  border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+  width: 100%;
+}
+.mid-content span {
+  width: 100%;
+  text-align: center;
+}
+.bottom-content {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-svg {
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.3s;
+  background-color: #676775;
+  color: #181818;
+  border-radius: 10px;
+  transition: transform 2s;
+}
+
+.close-svg:hover {
+  background-color: transparent;
+  color: #676775;
+}
+.timer-dialog {
+  width: 550px;
+  height: 140px;
+  border-radius: 20px;
+  background-color: #181818;
+  border-color: #676775;
+  transform: translateY(105px);
+}
+input[type="tel"]::-webkit-inner-spin-button,
+input[type="tel"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pin-inputs {
+  all: unset;
+}
+.pin-inputs {
+  font-size: 1.5rem;
+  letter-spacing: 1.5rem;
+  text-align: start;
+  z-index: 3;
+  background-color: transparent;
+  color: #676775;
+  width: 160px;
+  font-family: helvetica;
+  overflow-x: hidden;
+  transform: translateY(10px) translateX(20px);
+}
+.submits-svg {
+  padding: 5px;
+  margin-top: 3px;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.3s;
+  background-color: #676775;
+  color: #181818;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+.submits-svg:hover {
+  background-color: transparent;
+  color: #676775;
+}
+.submits:disabled {
+  background-color: transparent;
+  border: none;
+}
+.submits {
+  transform: translateX(-10px) translateY(13px);
+}
+button.submits {
+  background-color: #181818;
+  border: 1px solid #676775;
+  border-radius: 15px;
+}
+
+.timer-dialog-handler {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  row-gap: 4%;
+}
+.timer-dialog-top {
+  width: 100%;
+  height: 27%;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.timer-dialog-mid {
+  width: 100%;
+  height: 27%;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.name-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #676775;
+  color: #676775;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.teacher-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #676775;
+  color: #676775;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.name-text,
+.teacher-text {
+  background-color: #676775;
+  color: #181818;
+  width: 30%;
+  height: 80%;
+  border-radius: 6px;
+  text-align: center;
+  font-family: helvetica;
+  margin-left: 3px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 0.875rem;
+}
+
+.name-text span,
+.teacher-text span {
+  text-align: center;
+}
+.name-value,
+.teacher-value {
+  font-size: 1rem;
+  font-family: helvetica;
+}
+.timer-dialog-bottom {
+  width: 100%;
+  height: 34%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.timeSelect {
+  width: 68.3%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: helvetica;
+  font-size: 1.5rem;
+  color: #676775;
+  border: 2px solid #676775;
+  margin-left: 2px;
+  outline: none;
+  cursor: pointer;
+}
+.timeSelect:hover {
+  opacity: 0.8;
+}
+.send {
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid #676775;
+  background-color: #676775;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+.send:hover {
+  background-color: #232329;
+}
+.send:hover .submit-timer {
+  color: #676775;
+}
+.submit-timer {
+  padding: 5px;
+  margin-top: 3px;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.3s;
+  background-color: transparent;
+  color: #181818;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+.submit-timer:hover {
+  background-color: transparent;
+  color: #676775;
+}

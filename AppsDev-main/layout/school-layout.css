@@ -1,0 +1,303 @@
+:root {
+  --day-background-color: #fbfbfb;
+  --day-text-color: #232329;
+  --night-background-color: #232329;
+  --night-text-color: #fbfbfb;
+}
+body {
+  background-color: var(--night-background-color) !important;
+  margin: 0;
+  color: var(--day-text-color);
+  font-size: 1rem;
+  font-family: "Assistant", sans-serif;
+  font-weight: 400;
+}
+.top-view {
+  transform: scale(0.75);
+  margin: auto;
+  transition: transform 0.5s;
+}
+.top-views {
+  transform: scale(0.55);
+  margin: auto;
+  transition: transform 0.5s;
+}
+
+.layout-container,
+.layout-container1,
+.layout-container2,
+.layout-container3 {
+  padding-top: 5%;
+  width: 100%;
+  height: 100%;
+}
+button {
+  opacity: 0.8;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 1;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: #181818;
+  color: var(--day-text-color);
+  justify-content: center;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  font-size: 1rem;
+  border-radius: 0.5em;
+  font-family: "Assistant", sans-serif;
+}
+
+.value {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  color: #fbfbfb;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Assistant", sans-serif;
+  font-weight: 400;
+}
+
+.value:not(:active):hover,
+.value:focus {
+  background-color: #e3f6e1;
+  color: #181818;
+  border-radius: 0.5em;
+}
+
+.value:focus,
+.value:active {
+  background-color: #e3f6e1;
+  outline: none;
+  color: #181818;
+  border-radius: 0.5em;
+}
+
+.value::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  width: 5px;
+  height: 80%;
+  background-color: #2b8a3e;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.value:focus::before,
+.value:active::before {
+  opacity: 1;
+}
+
+.input:hover > :not(.value:hover) {
+  transition: 300ms;
+  filter: blur(1px);
+  transform: scale(0.95, 0.95);
+}
+
+/* background-image: url('../../images/cc.svg'); */
+.layout-container,
+.layout-container1,
+.layout-container2,
+.layout-container3 {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.layout {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.col1 {
+  height: 45%;
+  box-sizing: border-box;
+  width: 100%;
+}
+.col2 {
+  height: 55%;
+  width: 100%;
+}
+.col1 {
+  display: flex;
+  flex-direction: row;
+}
+.row1 {
+  width: 12%;
+  margin-left: 3.5%;
+  border: 1px solid var(--night-text-color);
+}
+.row2 {
+  width: 85%;
+  height: 55%;
+  margin-top: 5%;
+  border-top: 1px solid var(--night-text-color);
+}
+.row3 {
+  width: 12%;
+  border: 1px solid var(--night-text-color);
+}
+.col2 {
+  display: flex;
+  flex-direction: row;
+  border: none;
+}
+.rowb1 {
+  width: 14.2%;
+  display: flex;
+  flex-direction: row;
+}
+.side-classrooms {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  height: 98%;
+}
+.side-alley {
+  width: 23%;
+  border: 1px solid var(--night-text-color);
+  height: 100%;
+}
+
+.side-classroom {
+  height: 100%;
+  width: 95%;
+  margin-left: 5%;
+}
+.stairs-classroom {
+  height: 61%;
+  width: 80%;
+  border-right: 1px solid var(--day-background-color);
+  border-bottom: 1px solid var(--day-background-color);
+}
+.stairs-side {
+  margin-top: 20%;
+  height: 25%;
+  width: 45%;
+  border: 1px solid var(--night-text-color);
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--night-text-color);
+  margin-bottom: 1px;
+  position: relative;
+}
+.stairs-step1 {
+  width: 30%;
+  border-right: 1px solid var(--night-text-color);
+}
+.stairs-step2 {
+  border-top: 1px solid var(--night-text-color);
+  height: 50%;
+  margin-top: 47%;
+  width: 70%;
+}
+.row2 {
+  display: flex;
+  flex-direction: column;
+}
+.main-col1 {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+}
+.main-col2 {
+  height: 25%;
+  width: 100%;
+  border-bottom: 1px var(--night-text-color) solid;
+}
+.main-classrooms1 {
+  width: 100%;
+  height: 100%;
+  margin-right: 7%;
+  display: flex;
+  border-bottom: 1px solid var(--day-background-color);
+  border-right: 1px solid var(--day-background-color);
+}
+.main-classrooms2 {
+  width: 100%;
+  height: 100%;
+  margin-left: 7%;
+  display: flex;
+  border-bottom: 1px solid var(--day-background-color);
+}
+.main-classroom {
+  width: 100%;
+  height: 100%;
+}
+
+.stairs-classroom2 {
+  height: 61%;
+  width: 80%;
+  margin-left: 20%;
+}
+
+.stairs-side2 {
+  margin-top: 20%;
+  height: 25%;
+  width: 45%;
+  border: 1px solid var(--night-text-color);
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--night-text-color);
+  margin-bottom: 1px;
+  margin-left: 55%;
+}
+.stairs-step1a {
+  border-top: 1px solid var(--night-text-color);
+  height: 50%;
+  margin-top: 50%;
+  width: 65%;
+}
+.stairs-step2b {
+  width: 35%;
+  border-left: 1px solid var(--night-text-color);
+}
+
+::-webkit-scrollbar {
+  width: 0.1em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.green {
+  width: 100%;
+  height: 100%;
+  background-color: #2b8a3e;
+}
+
+.red {
+  width: 100%;
+  height: 100%;
+  background-color: #c92a2a;
+}
+.gray {
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+}
+button {
+  color: var(--night-text-color);
+}

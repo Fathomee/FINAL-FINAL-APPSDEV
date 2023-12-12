@@ -1,0 +1,70 @@
+<div class="icon">
+ <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="svg"><path d="m9 18 6-6-6-6"/>
+ </svg>
+</div>
+
+
+
+<style>
+ 
+.icon{
+ background-color: #181818;
+ border-radius: 5px ;
+ padding:4px;
+ width: 88px;
+ height:88px;
+ display:flex;
+ align-items: center;
+ justify-content:center;
+ cursor:pointer;
+ position:fixed;
+ top:10px;
+ left:10px;
+ z-index:999;
+ transition: transform .5s;
+}
+
+.icons{
+ transform: translateX(405px);
+ background-color:#181818;
+ border-radius: 5px ;
+ padding:4px;
+ width: 88px;
+ height:88px;
+ display:flex;
+ align-items: center;
+ justify-content:center;
+ cursor:pointer;
+ position:fixed;
+ top:10px;
+ left:10px;
+ z-index:999;
+}
+.icon:hover , .icons:hover{
+ background-color: #141414;
+}
+.svg{
+ color:#BCBCBC;
+ transition: transform .5s;
+}
+.svgs{
+ transform: rotate(-180deg);
+ color:#BCBCBC;
+}
+.svg:hover , .svgs:hover{
+ color: #fbfbfb;
+}
+
+</style>
+
+<script>
+ 
+const icon = document.querySelector('.icon');
+const svg = document.querySelector('.svg');
+
+icon.addEventListener('click', () =>{
+ icon.classList.toggle('icons');
+ svg.classList.toggle('svgs');
+});
+
+</script>

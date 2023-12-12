@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoom Example</title>
+ 
+</head>
+<body>
+
+<div class="top-view">
+  Hello
+</div>
+
+<div class="zoom-container">
+  <div class="minus" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus"><path d="M5 12h14"/></svg></div>
+  <div class="percent">50%</div>
+  <div class="plus"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg></div>
+</div>
+
+<script>
+ //this code from chatGPT so i don't understand most of the code
+
+ //gets the element through selector classes
+  const topView = document.querySelector('.top-view');
+  const plus = document.querySelector('.plus');
+  const minus = document.querySelector('.minus');
+  const percent = document.querySelector('.percent');
+
+  //function that can be used for adding value
+  function changeScale(amount) {
+
+   //TF is this
+    const currentScale = parseFloat(getComputedStyle(topView).transform.split(',')[3]);
+    const newScale = currentScale + amount;
+
+    // Limit scale to 0.5 to 1 ??
+    const limitedScale = Math.min(Math.max(newScale, 0.5), 1);
+
+    // Display percentage in console or can be in page
+    const percentage = ((limitedScale - 0.5) / 0.5) * 100;
+    percent.innerHTML = `${percentage.toFixed(0)}%`;
+
+    // Apply the new scale
+    topView.style.transform = `scale(${limitedScale})`;
+  }
+
+  //if button is click do the function above and input a corresponding value
+  plus.addEventListener('click', () => {
+    changeScale(0.05);
+  });
+
+  minus.addEventListener('click', () => {
+    changeScale(-0.05);
+  });
+
+  
+
+</script>
+<style>
+
+  .zoom-container{
+    display: flex;
+    background-color: #232329;
+    width: 132px;
+    height: 40px;
+    color: #fbfbfb;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: .5rem;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+  }
+ .top-view {
+   transform: scale(0.75);
+   background-color: #232329;
+   width: 100px;
+   height: 100px;
+ }
+ .percent{
+  width: 60px;
+ }
+ .plus, .minus {
+  background-color: #232329;
+   color: #fbfbfb;
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+   box-sizing: border-box;
+   padding: 10.6px;
+ }
+ .plus{
+  border-bottom-right-radius: .5rem;
+  border-top-right-radius: .5rem;
+ }
+ .minus{
+  border-bottom-left-radius: .5rem;
+  border-top-left-radius: .5rem;
+ }
+ .plus:hover,.minus:hover{
+  background-color: #2f2f38;
+ }
+</style>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <select class="timeSelect">
+        <option value="60">60 minutes</option>
+        <option value="30">30 minutes</option>
+      </select>
+      <button class="startCountdown">
+        Start Countdown <span class="timer"></span>
+      </button>
+    </div>
+
+    <div>
+      <select class="timeSelect">
+        <option value="60">60 minutes</option>
+        <option value="30">30 minutes</option>
+        <option value="90">1 hour and 30 minutes</option>
+      </select>
+      <button class="startCountdown">
+        Start Countdown <span class="timer"></span>
+      </button>
+    </div>
+    <div class="countdown" style="display: none">
+      <button class="stopCountdown" style="display: none">
+        Stop Countdown
+      </button>
+    </div>
+
+    <script>
+      const startButtons = document.querySelectorAll(".startCountdown");
+      const stopButtons = document.querySelectorAll(".stopCountdown");
+      const timerDisplays = document.querySelectorAll(".timer");
+      const countdownDivs = document.querySelectorAll(".countdown");
+      const timeSelects = document.querySelectorAll(".timeSelect");
+
+      const startCountdown = (index) => {
+        let selectedTime = parseInt(timeSelects[index].value);
+        countdownDivs[index].style.display = "block";
+
+        const stopButton = stopButtons[index];
+        stopButton.style.display = "block";
+
+        const countdownInterval = setInterval(function () {
+          selectedTime--;
+          timerDisplays[index].innerText = selectedTime + " minutes";
+
+          if (selectedTime <= 0) {
+            clearInterval(countdownInterval);
+            countdownDivs[index].style.backgroundColor = "red";
+            timerDisplays[index].innerHTML = "";
+            stopButton.style.display = "none";
+          }
+        }, 1000);
+      };
+
+      startButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          startCountdown(index);
+        });
+      });
+
+      stopButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const index = [...stopButtons].indexOf(this);
+          countdownDivs[index].style.display = "none";
+          clearInterval(countdownInterval);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+
+<div class="name-container" id="person1">
+ <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="svg"><path d="m9 18 6-6-6-6"/>
+ <div class="name">
+   Jilian Garette Abangan
+ </div>
+</div>
+<div class="somethingElse" id="dropdown1">Something Else</div>
+
+<div class="name-container" id="person2">
+ <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="svg"><path d="m9 18 6-6-6-6"/>
+ <div class="name">
+   Another person
+ </div>
+</div>
+<div class="somethingElse" id="dropdown2">Another Person</div>
+
+
+<script>
+
+ const nameContainers = document.querySelectorAll('.name-container');
+
+
+ nameContainers.forEach((container, index) => {
+
+   const dropdown = document.querySelector(`#dropdown${index + 1}`);
+   const svg = container.querySelector('.svg');
+
+   container.addEventListener('click', () => {
+     svg.classList.toggle('svgNewClass');
+     dropdown.classList.toggle('somethingElseNewClass');
+   });
+ });
+</script>
+
+
+
+
+
+
+
+<style>
+ body{
+  margin:1;
+ }
+
+ .name-container{
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+ }
+ svg{
+  padding-right: 5px;
+ }
+ .name-container,.somethingElse{
+  width: 92%;
+  font-family: helvetica;
+  color: #BCBCBC;
+  padding: 15px;
+  margin:5px;
+  border-radius: 3px;
+  cursor:pointer;
+  overflow: auto;
+  font-size:x-large;
+  background-color: #181818;
+  margin: none;
+  width: 100%;
+  box-sizing:border-box;
+ }
+ .name-container:hover,.somethingElse:hover{
+  color: #fbfbfb;
+  background-color:#252525;
+  
+ }
+ .somethingElse{
+  padding-left: 10%;
+  display: none;
+
+ }
+ .svg{
+  transition: transform .3s;
+  padding-right: 10px;
+
+ }
+ .svgNewClass{
+  transform: rotate(90deg) translateX(3px);
+  padding-right: 10px;
+ }
+.somethingElseNewClass{
+ width: 92%;
+  font-family: helvetica;
+  color: #BCBCBC;
+  padding: 15px;
+  margin:5px;
+  border-radius: 3px;
+  cursor:pointer;
+  overflow: auto;
+  font-size:x-large;
+  background-color: #181818;
+  margin: none;
+  width: 100%;
+  box-sizing:border-box;
+  padding-left: 10%;
+  display: block;
+}
+</style>

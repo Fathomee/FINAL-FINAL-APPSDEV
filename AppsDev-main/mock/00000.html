@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="timer">
+      <select class="timeSelect">
+        <option value="60">60 seconds</option>
+        <option value="30">30 seconds</option>
+      </select>
+      <div class="display-time"></div>
+      <button class="start">Start Countdown</button>
+    </div>
+
+    <div class="timer">
+      <select class="timeSelect">
+        <option value="60">60 seconds</option>
+        <option value="30">30 seconds</option>
+      </select>
+      <div class="display-time"></div>
+      <button class="start">Start Countdown</button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const startButtons = document.querySelectorAll(".start");
+        const timeSelectors = document.querySelectorAll(".timeSelect");
+        const displayTimes = document.querySelectorAll(".display-time");
+        let timers = [];
+
+        // Function to update display time
+        function updateDisplayTime(index, time) {
+          displayTimes[index].innerText = formatTime(time);
+        }
+
+        // Function to start countdown for a specific timer
+        function startCountdown(index, duration) {
+          let timer = duration;
+          timers[index] = setInterval(function () {
+            timer--;
+            updateDisplayTime(index, timer);
+
+            if (timer <= 0) {
+              clearInterval(timers[index]);
+            }
+          }, 1000);
+        }
+
+        // Format time in MM:SS format
+        function formatTime(seconds) {
+          const minutes = Math.floor(seconds / 60);
+          const remainingSeconds = seconds % 60;
+          return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+        }
+
+        // Event listeners for each start button
+        startButtons.forEach((button, index) => {
+          button.addEventListener("click", function () {
+            const selectedTime = parseInt(timeSelectors[index].value);
+            clearInterval(timers[index]); // Clear previous timer for this index
+            updateDisplayTime(index, selectedTime);
+            startCountdown(index, selectedTime);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
